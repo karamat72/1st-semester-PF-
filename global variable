@@ -1,0 +1,18 @@
+
+#include <iostream>
+using namespace std;
+int a=6;                             //global variable
+void student(int x,int y)
+{
+    int z;
+    z=x+y;
+    cout<<z;
+}
+int main() {
+    int b;
+   b=4;
+    student(9,5);
+    cout<<endl;
+ student(a,b);
+ 
+}
