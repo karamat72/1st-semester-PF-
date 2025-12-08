@@ -1,0 +1,18 @@
+
+#include <iostream>
+using namespace std;
+void student(int x,int y)
+{
+    int z;
+    z=x-y;
+    cout<<z;
+}
+int main() {
+    int a,b;
+    a=6;
+    b=9;
+    student(4,8);
+    cout<<endl;
+    student(a,b);
+    return 0;
+}
