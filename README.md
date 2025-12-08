@@ -1,2 +1,15 @@
-# 1st-semester-PF-
-Programming is the process of giving instructions to a computer so it can perform tasks. These instructions are written in a programming language (like Python, Java, C++, etc.).  A computer doesn’t “think” — it follows your instructions exactly. So learning to program means learning how to break problems down into steps a computer can understand.
+online
+#include <iostream>
+using namespace std;
+void student(int x,int y)
+{
+    int z;
+    z=x+y;
+    cout<<z;
+}
+int main() {
+    int a,b;
+    student(4,8);
+    
+    return 0;
+}
