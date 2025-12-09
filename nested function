@@ -1,0 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void student(int a,int b)
+{
+    cout<<"ENTER THE VALUE OF ONE NUMBER"<<endl;
+    cin>>a;
+    cout<<"ENTER THE VALUE OF SECOND VALUE"<<endl;
+    cin>>b;
+    double sum =a+b;
+    cout<<"sum of two number is = "<<sum<<endl;
+}
+void info(int c,int d)
+{
+int multiply =c*d;
+cout<<"Multiply of two number= "<<multiply<<endl;
+}
+int main() {
+int x,y;
+student(x,y);
+info(8,3);
+info(6,2);
+}
