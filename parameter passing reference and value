@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void info(int a, int b, int &sum, int &mul)
+{
+    sum = a + b;
+    mul = a * b;
+}
+
+int main() {
+    int a = 5;
+    int b = 7;
+
+    int sum, mul;
+
+    info(a, b, sum, mul);   // pass all parameters
+
+    cout << "Sum = " << sum << endl;
+    cout << "Multiplication = " << mul << endl;
+
+    return 0;
+}
