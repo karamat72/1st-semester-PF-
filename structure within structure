@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct info
+{
+    string cr_name;
+    string gr_name;
+    char section;
+    int group;
+};
+
+struct teacher
+{
+    string name;
+    string sub;
+    int times;
+};
+
+int main() 
+{
+    info k;
+
+    cout << "Enter the name of CR: ";
+    cin >> k.cr_name;
+
+    cout << "Enter the name of GR: ";
+    cin >> k.gr_name;
+
+    cout << "Enter the section of your class: ";
+    cin >> k.section;
+
+    cout << "Enter your group: ";
+    cin >> k.group;
+
+    cout << "\n--- Class Information ---\n";
+    cout << "Name of CR = " << k.cr_name << endl;
+    cout << "Name of GR = " << k.gr_name << endl;
+    cout << "Section    = " << k.section << endl;
+    cout << "Group      = " << k.group << endl;
+
+    cout << "\n<>.....................................<>\n";
+
+    teacher m;
+
+    cout << "Enter the name of teacher: ";
+    cin >> m.name;
+
+    cout << "Enter the name of subject: ";
+    cin >> m.sub;
+
+    cout << "Enter number of classes per week: ";
+    cin >> m.times;
+
+    cout << "\n--- Teacher Information ---\n";
+    cout << "Name of Teacher = " << m.name << endl;
+    cout << "Name of Subject = " << m.sub << endl;
+    cout << "Time of Class   = " << m.times << endl;
+
+    return 0;
+}
