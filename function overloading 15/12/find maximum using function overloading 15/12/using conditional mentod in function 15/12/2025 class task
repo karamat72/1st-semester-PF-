@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Function to find max of two numbers
+void max(int a, int b)
+{
+    int result = (a > b) ? a : b;
+    cout << "Maximum of two numbers is: " << result << endl;
+}
+
+// Function to find max of three numbers
+void max(int a, int b, int c)
+{
+    int temp = (a > b) ? a : b;
+    int result = (temp > c) ? temp : c;
+    cout << "Maximum of three numbers is: " << result << endl;
+}
+
+int main()
+{
+    max(3, 76);
+    max(2, 7, 9);
+
+    return 0;
+}
