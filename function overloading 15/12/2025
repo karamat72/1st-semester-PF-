@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void mul(int a,int b)
+{
+int product=a*b;
+cout<<"multiply of two number="<<product<<endl;
+}
+void mul(int a,int b, int c,int d)
+
+{
+    int product1=a*b*c*d;
+    cout<<"multiply of fourth number="<<product1;
+    
+    
+}
+int main()
+{
+    int a,b,c,d;
+    mul(1,3);
+    mul(2,4,6,8);
+}
