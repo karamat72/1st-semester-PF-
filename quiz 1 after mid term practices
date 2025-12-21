@@ -1,0 +1,101 @@
+
+#include <iostream>
+using namespace std;
+double factorial(int n)
+{
+    int fact;
+      fact=1;
+    for(int i=1;i<=n;i++)
+{
+    fact=fact*i;
+}
+return fact;
+}
+int main()
+{
+    int n;
+  
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    cout<<"factorial of given number is"<<n<<"  is  ";
+cout<< factorial(n);
+  
+}
+
+
+
+
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int n,check;
+  
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    check=sqrt(n);
+cout<<" square root of given "<<n<<" is "<<check;
+  return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+string reverseString(string str)
+{
+    string rev = "";
+    for(int i = str.length() - 1; i >= 0; i--)
+    {
+        rev = rev + str[i];
+    }
+    return rev;
+}
+
+int main()
+{
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+
+    cout << "Reverse of given string is: " << reverseString(str);
+    return 0;
+}
+
+
+
+Write a program to find the GCD (Greatest
+Common Divisor) of two numbers
+using a function.
+
+
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b)
+{
+    int gcd = 1;
+
+    for(int i = 1; i <= a && i <= b; i++)
+    {
+        if(a % i == 0 && b % i == 0)
+        {
+            gcd = i;
+        }
+    }
+    return gcd;
+}
+
+int main()
+{
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    cout << "GCD is: " << gcd(num1, num2);
+    return 0;
+}
+
