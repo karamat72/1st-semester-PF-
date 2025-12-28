@@ -1,0 +1,44 @@
+
+ #include <iostream>
+using namespace std;
+
+enum day { mon,tues,
+wed, thus, friday, sat, sun };
+
+int main()
+{
+    int x;
+    day d;
+    cout<<"enter the day";
+    cin>>x;
+    d=(day)x;
+    switch(d)
+    {
+    case mon :
+    cout<<"DAY IS MONDAY"<<endl;
+    break;
+    case tues:
+    cout<<"DAY IS TUESDAY"<<endl;
+    break;
+    case wed:
+    cout<<"DAY IS WEDNESDAY"<<endl;
+    break;
+    case thus:
+    cout<<"DAY IS THURSDAY"<<endl;
+break;
+    case friday:
+    cout<<"DAY IS FRIDAY"<<endl;
+    break;
+   
+    case sat:
+    cout<<"DAY IS SATURDAY"<<endl;
+   case sun:
+    cout<<"DAY IS SUNDAY";
+  break;
+  default:
+  cout<<"INVALID";
+}
+
+    return 0;
+}
+
