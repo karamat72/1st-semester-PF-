@@ -1,0 +1,135 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+using namespace std;
+
+/* ===== Enumeration ===== */
+enum Grade { A, B, C, F };
+
+/* ===== Structure ===== */
+struct Student {
+    int roll;
+    string name;
+    int english, physics, pf;
+    int total;
+    float percent;
+    Grade grade;
+};
+
+/* ===== Calculate Result (Pointer Used) ===== */
+void calculate(Student* s) {
+    s->total = s->english + s->physics + s->pf;
+    s->percent = s->total / 3.0;
+
+    if (s->percent >= 80)
+        s->grade = A;
+    else if (s->percent >= 60)
+        s->grade = B;
+    else if (s->percent >= 40)
+        s->grade = C;
+    else
+        s->grade = F;
+}
+
+/* ===== Random Result Generator ===== */
+void generateRandom(Student* s) {
+    s->english = rand() % 101;
+    s->physics = rand() % 101;
+    s->pf = rand() % 101;
+    calculate(s);
+}
+
+/* ===== Teacher Edit ===== */
+void teacherEdit(Student* s) {
+    cout << "\nEnter English Marks: ";
+    cin >> s->english;
+    cout << "Enter Physics Marks: ";
+    cin >> s->physics;
+    cout << "Enter PF Marks: ";
+    cin >> s->pf;
+
+    calculate(s);
+}
+
+/* ===== Display Result ===== */
+void display(Student s) {
+    cout << "\n========== STUDENT RESULT ==========";
+    cout << "\nRoll Number: " << s.roll;
+    cout << "\nName: " << s.name;
+    cout << "\nEnglish: " << s.english;
+    cout << "\nPhysics: " << s.physics;
+    cout << "\nPF: " << s.pf;
+    cout << "\n-----------------------------------";
+    cout << "\nObtained Marks: " << s.total << " / 300";
+    cout << "\nPercentage: " << s.percent;
+
+    cout << "\nGrade: ";
+    if (s.grade == A) cout << "A";
+    else if (s.grade == B) cout << "B";
+    else if (s.grade == C) cout << "C";
+    else cout << "F";
+
+    cout << "\nStatus: " << (s.grade == F ? "Fail" : "Pass");
+    cout << "\n===================================";
+}
+
+/* ===== Generate Random Name ===== */
+string randomName(int length = 6) {
+    string name = "";
+    for (int i = 0; i < length; i++) {
+        char c = 'A' + rand() % 26;  // Random uppercase letter
+        name += c;
+    }
+    return name;
+}
+
+/* ===== MAIN FUNCTION ===== */
+int main() {
+    Student s;
+    int choice;
+
+    srand(time(0));
+
+    do {
+        cout << "\n\n===== RESULT MANAGEMENT SYSTEM =====";
+        cout << "\n1. Student (Search by Roll Number)";
+        cout << "\n2. Teacher (Edit Result)";
+        cout << "\n3. Exit";
+        cout << "\nEnter Choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            cout << "\nEnter Roll Number (1 - 50000): ";
+            cin >> s.roll;
+
+            if (s.roll >= 1 && s.roll <= 50000) {
+                s.name = randomName(6);  // Random 6-char name
+                generateRandom(&s);
+                display(s);
+            } else {
+                cout << "\nInvalid Roll Number! Please enter between 1 and 50000.";
+            }
+
+        } else if (choice == 2) {
+            cout << "\nEnter Roll Number (1 - 50000): ";
+            cin >> s.roll;
+
+            if (s.roll >= 1 && s.roll <= 50000) {
+                s.name = randomName(6);  // Random 6-char name
+                teacherEdit(&s);
+                display(s);
+            } else {
+                cout << "\nInvalid Roll Number! Please enter between 1 and 50000.";
+            }
+
+        } else if (choice == 3) {
+            cout << "\nProgram Exit. Thank You!";
+        } else {
+            cout << "\nInvalid Choice!";
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
