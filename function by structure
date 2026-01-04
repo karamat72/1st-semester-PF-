@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+struct Book
+{
+    string name;
+    int price;
+};
+
+// Function to find costly book
+Book costlyBook(Book b1, Book b2)
+{
+    if (b1.price > b2.price)
+        return b1;
+    else
+        return b2;
+}
+
+int main()
+{
+    Book b1, b2, expensive;
+
+    // Book 1
+    b1.name = "C++ Programming";
+    b1.price = 1200;
+
+    // Book 2
+    b2.name = "Data Structures";
+    b2.price = 1500;
+
+    // Function call
+    expensive = costlyBook(b1, b2);
+
+    cout << "Costly Book is: " << expensive.name << endl;
+    cout << "Price: " << expensive.price;
+
+    return 0;
+}
