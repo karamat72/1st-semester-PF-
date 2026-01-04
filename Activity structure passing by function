@@ -1,0 +1,69 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/* ===== Structure Definition ===== */
+struct Books
+{
+    int book_no;
+    string title;
+    string author;
+    string isbn;
+};
+
+/* ===== Input Function ===== */
+void input(Books b[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\nEnter details of Book " << i + 1 << endl;
+
+        cout << "Book No: ";
+        cin >> b[i].book_no;
+        cin.ignore();
+
+        cout << "Title: ";
+        getline(cin, b[i].title);
+
+        cout << "Author: ";
+        getline(cin, b[i].author);
+
+        cout << "ISBN: ";
+        getline(cin, b[i].isbn);
+    }
+}
+
+/* ===== Display Function ===== */
+void display(Books b[], int n)
+{
+    cout << "\n\n---------- Book Records ----------\n";
+    cout << left << setw(10) << "No"
+         << setw(20) << "Title"
+         << setw(20) << "Author"
+         << setw(15) << "ISBN" << endl;
+
+    cout << "-----------------------------------------------------------\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << left << setw(10) << b[i].book_no
+             << setw(20) << b[i].title
+             << setw(20) << b[i].author
+             << setw(15) << b[i].isbn << endl;
+    }
+}
+
+/* ===== Main Function ===== */
+int main()
+{
+    Books b[100];
+    int n;
+
+    cout << "Enter number of books (max 100): ";
+    cin >> n;
+
+    input(b, n);
+    display(b, n);
+
+    return 0;
+}
