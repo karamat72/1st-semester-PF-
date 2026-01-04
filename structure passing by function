@@ -1,0 +1,20 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+struct rectangle 
+{
+    int l,w;
+};
+int calarea(rectangle s)
+{
+    return s.l*s.w;
+    
+}
+
+int main() {
+rectangle s;
+s.l=8;
+s.w=3;
+int area=calarea(s);
+cout<<"Area of rectangle ="<<area;
+}
